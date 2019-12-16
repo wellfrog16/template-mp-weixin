@@ -1,4 +1,4 @@
-# template-uni-app
+# template-mp-weixin
 
 ## Project setup
 ```
