@@ -12,7 +12,8 @@
 	}
 </script>
 
-<style>
+<style lang="less">
 	/*每个页面公共css */
 	@import './style/common/uni.css';
+	@import './style/app.less';
 </style>
