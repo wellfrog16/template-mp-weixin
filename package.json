@@ -34,6 +34,7 @@
     "@dcloudio/uni-mp-weixin": "^2.0.0-24220191115006",
     "@dcloudio/uni-stat": "^2.0.0-24220191115006",
     "flyio": "^0.6.14",
+    "lodash": "^4.17.15",
     "regenerator-runtime": "^0.12.1",
     "vue": "^2.6.10",
     "vuex": "^3.0.1"
