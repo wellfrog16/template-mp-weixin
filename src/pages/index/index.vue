@@ -3,24 +3,48 @@
 		<image class="logo" src="/static/logo.png"></image>
 		<view>
 			<text class="title">{{title}}</text>
+			<button type="primary" open-type="getUserInfo" @getuserinfo="mpGetUserInfo">基础授权</button>
 		</view>
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
+import { USER_INFO } from '@/helper/constant';
+
+export default {
+	data() {
+		return {
+			title: 'Hello'
+		}
+	},
+	onLoad() {
+		this.$helper.site();
+	},
+	methods: {
+		mpGetUserInfo(res) {
+			const { detail } = res;
+			if (detail.errMsg !== 'getUserInfo:ok') {
+				uni.showModal({
+					title: '获取用户信息失败',
+					content: '错误原因' + detail.errMsg,
+					showCancel: false
+				});
+			} else {
+				uni.setStorage({
+					key: USER_INFO,
+					data: { ...detail.userInfo },
+					fail: (err) => {
+						uni.showModal({
+							title: '数据缓存失败',
+							content: '错误原因' + err.messsage,
+							showCancel: false
+						});
+					}
+				});
 			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
 		}
 	}
+}
 </script>
 
 <style>

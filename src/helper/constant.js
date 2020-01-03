@@ -11,3 +11,5 @@ export const RES_DETAIL = 'detail'; // 请求返回的详细字段
 export const UID = 'guid'; // 唯一标识符
 
 export const UPLOAD_NAME = 'avatar'; // 上传标识符
+
+export const USER_INFO = 'userInfo'; // 上传标识符
