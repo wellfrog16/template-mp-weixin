@@ -1,18 +1,24 @@
 {
 	"pages": [
 		{
-			"path": "pages/index/index",
+			"path": "pages/tab-bar/index",
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
 		},
 		{
-			"path": "pages/home/index",
+			"path": "pages/tab-bar/home",
 			"style": {
 				"navigationBarTitleText": "个人中心"
 			}
 		}
 	],
+	"subPackages": [{
+        "root": "pages/index",
+        "pages": [{
+			"path": "article/index"
+		}]
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "微信小程序",
@@ -25,13 +31,13 @@
 		"borderStyle": "black",
 		"backgroundColor": "#F8F8F8",
 		"list": [{
-				"pagePath": "pages/index/index",
+				"pagePath": "pages/tab-bar/index",
 				"text": "首页",
 				"iconPath": "static/index.png",
 				"selectedIconPath": "static/indexHL.png"
 			},
 			{
-				"pagePath": "pages/home/index",
+				"pagePath": "pages/tab-bar/index",
 				"text": "个人",
 				"iconPath": "static/home.png",
 				"selectedIconPath": "static/homeHL.png"

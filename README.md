@@ -14,6 +14,8 @@
 * 资源懒加载策略
 * canvas绘图封装（比例相关）
 * vuex结构
+* moment
+* JSON.parse
 
 ## Project setup
 ```

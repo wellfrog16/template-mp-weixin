@@ -9,7 +9,11 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
 import { USER_INFO } from '@/helper/constant';
+import { login } from '@/helper/mp-weixin';
+
+const { mapState } = createNamespacedHelpers('security');
 
 export default {
 	data() {
@@ -17,8 +21,28 @@ export default {
 			title: 'Hello'
 		}
 	},
+	computed: {
+		...mapState(['name']),
+	},
 	onLoad() {
 		this.$helper.site();
+
+        console.log(this.name);
+        
+        login();
+
+		// uni.login({
+		// 	provider: 'weixin',
+		// 	// #ifdef MP-ALIPAY
+		// 	scopes: 'auth_user',  //支付宝小程序需设置授权类型
+		// 	// #endif
+		// 	success: (res) => {
+		// 		console.log(res);
+		// 	},
+		// 	fail: (err) => {
+		// 		console.log(err);
+		// 	}
+		// });
 	},
 	methods: {
 		mpGetUserInfo(res) {
