@@ -16,6 +16,9 @@
 * vuex结构
 * moment
 * JSON.parse
+* showToast公共错误反馈
+* 用户冻结功能
+* 分享mixin（静态/动态）
 
 ## Project setup
 ```
