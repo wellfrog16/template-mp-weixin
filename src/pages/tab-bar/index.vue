@@ -12,6 +12,7 @@
 import { createNamespacedHelpers } from 'vuex';
 import { USER_INFO } from '@/helper/constant';
 import { login } from '@/helper/mp-weixin';
+import { storage } from '@/utils/rivers';
 
 const { mapState } = createNamespacedHelpers('security');
 
@@ -25,11 +26,26 @@ export default {
 		...mapState(['name']),
 	},
 	onLoad() {
-		this.$helper.site();
+		storage.set('test', 111, { expires: new Date('2020-01-20 18:16:00') });
 
-        console.log(this.name);
+		setTimeout(() => {
+			storage.get('test').then((res) => {
+				console.log(res, 'aaa');
+			})
+		}, 4000)
+
+		setTimeout(() => {
+			storage.get('test').then((res) => {
+				console.log(res, 'bbb');
+			}).catch((err) => {
+				console.log(999);
+			})
+		}, 6000)
+		// this.$helper.site();
+
+        // console.log(this.name);
         
-        login();
+        // login();
 
 		// uni.login({
 		// 	provider: 'weixin',
